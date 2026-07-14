@@ -52,6 +52,47 @@
         display: none;
       }
 
+      .score-feedback {
+        position: fixed;
+        top: 22px;
+        left: 50%;
+        z-index: 30;
+        display: flex;
+        min-width: min(420px, calc(100vw - 32px));
+        align-items: center;
+        gap: 10px;
+        transform: translate(-50%, -18px);
+        padding: 12px 16px;
+        border: 1px solid rgba(22, 101, 52, 0.24);
+        border-radius: 12px;
+        color: #14532d;
+        background: #f0fdf4;
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16);
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.4;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.18s ease, transform 0.18s ease;
+      }
+
+      .score-feedback.show {
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+
+      .score-feedback-mark {
+        display: grid;
+        width: 22px;
+        height: 22px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 50%;
+        color: #fff;
+        background: #16a34a;
+        font-size: 14px;
+      }
+
       .example-report {
         margin-bottom: 28px;
         border: 1px solid #cbd5e1;
@@ -1587,6 +1628,14 @@
           backdrop-filter: blur(12px);
         }
 
+        .score-feedback {
+          top: 12px;
+          min-width: 0;
+          width: calc(100vw - 24px);
+          padding: 11px 13px;
+          font-size: 13px;
+        }
+
         .mobile-resultbar-title {
           color: var(--navy);
           font-size: 15px;
@@ -2123,6 +2172,11 @@
         <div class="mobile-step-status" id="mobileStepStatus">请选择当前题目后继续</div>
       </div>
 
+      <div class="score-feedback" id="scoreFeedback" role="status" aria-live="polite" aria-atomic="true">
+        <span class="score-feedback-mark" aria-hidden="true">✓</span>
+        <span id="scoreFeedbackText">评分已记录</span>
+      </div>
+
       <div class="block-heading">
         <h2>一、风险评估</h2>
         <span id="progressNote">已完成 0/12 项｜请选择最接近的 1/3/5 分档位</span>
@@ -2300,6 +2354,7 @@
       const allItems = dimensions.flatMap((dimension) => dimension.items);
       let mobileQuestionIndex = 0;
       let reportGenerated = false;
+      let feedbackTimer = null;
       const actions = [
         { id: "no_communication", label: "未沟通即发函、投诉或起诉", advice: "汇报时说明是否存在沟通记录，以及为何需要采取当前节奏。" },
         { id: "high_claim", label: "高额索赔与行为规模明显不匹配", advice: "向客户解释索赔依据、损失或获利基础与行为规模的对应关系。" },
@@ -2345,6 +2400,17 @@
 
       function firstIncompleteIndex() {
         return allItems.findIndex((item) => state[item.id] == null);
+      }
+
+      function showScoreFeedback(item, score, nextItem) {
+        const feedback = document.getElementById("scoreFeedback");
+        const text = document.getElementById("scoreFeedbackText");
+        text.textContent = nextItem
+          ? `已记录：${item.name} ${score}分｜下一题：${nextItem.name}`
+          : `已记录：${item.name} ${score}分｜评分已完成，请查看传播风险提示`;
+        feedback.classList.add("show");
+        window.clearTimeout(feedbackTimer);
+        feedbackTimer = window.setTimeout(() => feedback.classList.remove("show"), 2400);
       }
 
       function getZone(material, sensitivity) {
@@ -2526,6 +2592,8 @@
           reportGenerated = false;
           const selectedIndex = allItems.findIndex((item) => item.id === button.dataset.item);
           if (selectedIndex >= 0 && selectedIndex < allItems.length - 1) mobileQuestionIndex = selectedIndex + 1;
+          const selectedItem = allItems[selectedIndex];
+          showScoreFeedback(selectedItem, Number(button.dataset.score), allItems[selectedIndex + 1]);
           renderScoring();
           update();
         });
