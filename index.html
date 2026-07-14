@@ -52,6 +52,251 @@
         display: none;
       }
 
+      .example-report {
+        margin-bottom: 28px;
+        border: 1px solid #cbd5e1;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #f8fbff 0%, #ffffff 58%, #fff7ed 100%);
+        padding: 22px;
+      }
+
+      .example-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .example-kicker {
+        color: var(--orange);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+      }
+
+      .example-title {
+        margin: 4px 0 0;
+        color: var(--navy);
+        font-size: 26px;
+        font-weight: 950;
+      }
+
+      .example-desc {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .example-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 14px;
+        align-items: stretch;
+      }
+
+      .example-result,
+      .example-bars,
+      .example-quadrant {
+        border: 1px solid #d7dee9;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.82);
+        padding: 16px;
+      }
+
+      .example-quadrant {
+        grid-column: 1 / -1;
+      }
+
+      .example-result-label {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .example-result-title {
+        margin-top: 6px;
+        color: var(--orange);
+        font-size: 26px;
+        font-weight: 950;
+      }
+
+      .example-result-copy {
+        margin-top: 8px;
+        color: #344054;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .example-bars {
+        display: grid;
+        gap: 12px;
+      }
+
+      .example-bar-row {
+        display: grid;
+        grid-template-columns: 82px 1fr 34px;
+        gap: 8px;
+        align-items: center;
+        color: var(--navy);
+        font-size: 12px;
+        font-weight: 850;
+      }
+
+      .example-bar {
+        height: 8px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e5e7eb;
+      }
+
+      .example-bar span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+      }
+
+      .example-bar.blue span { width: 82%; background: var(--blue); }
+      .example-bar.brown span { width: 74%; background: var(--brown); }
+      .example-bar.orange span { width: 68%; background: var(--orange); }
+
+      .example-quadrant-title {
+        color: var(--navy);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .example-map-shell {
+        position: relative;
+        min-height: 326px;
+        margin-top: 10px;
+        padding: 31px 52px;
+      }
+
+      .example-map-shell::before,
+      .example-map-shell::after {
+        position: absolute;
+        z-index: 0;
+        content: "";
+        background: #b8c1cf;
+      }
+
+      .example-map-shell::before {
+        top: 31px;
+        bottom: 31px;
+        left: 50%;
+        width: 1px;
+      }
+
+      .example-map-shell::after {
+        top: 50%;
+        right: 52px;
+        left: 52px;
+        height: 1px;
+      }
+
+      .example-axis-top,
+      .example-axis-bottom,
+      .example-axis-left,
+      .example-axis-right {
+        position: absolute;
+        z-index: 2;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 850;
+      }
+
+      .example-axis-top {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .example-axis-bottom {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .example-axis-left {
+        bottom: 7px;
+        left: 0;
+      }
+
+      .example-axis-right {
+        right: 0;
+        bottom: 7px;
+      }
+
+      .example-map-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, minmax(105px, 1fr));
+        gap: 10px;
+        height: 264px;
+      }
+
+      .example-quad-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px;
+        border: 1px solid;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 950;
+        text-align: center;
+      }
+
+      .example-quad-card small {
+        margin-top: 7px;
+        color: #475467;
+        font-size: 11px;
+        line-height: 1.35;
+        font-weight: 700;
+      }
+
+      .example-quad-red { color: var(--red); border-color: var(--red); background: var(--red-bg); }
+      .example-quad-orange { color: var(--orange); border-color: var(--orange); background: var(--orange-bg); }
+      .example-quad-slate { color: var(--slate); border-color: var(--slate); background: var(--slate-bg); }
+      .example-quad-green { color: var(--green); border-color: var(--green); background: var(--green-bg); }
+
+      .example-marker {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 3px 6px;
+        border-radius: 999px;
+        color: #fff;
+        background: var(--orange);
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .example-start {
+        flex: 0 0 auto;
+        min-height: 44px;
+        border: 0;
+        border-radius: 10px;
+        padding: 0 18px;
+        color: #fff;
+        background: var(--navy);
+        cursor: pointer;
+        font: inherit;
+        font-weight: 900;
+      }
+
+      .report-overline {
+        margin: 18px 22px -4px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 850;
+        letter-spacing: 0.04em;
+      }
+
       .brand-logo {
         display: block;
         width: 112px;
@@ -90,6 +335,85 @@
         line-height: 1.7;
       }
 
+      .use-case {
+        max-width: 1120px;
+        margin: 22px auto 0;
+        padding: 16px 18px;
+        border: 1px solid #d7dee9;
+        border-radius: 16px;
+        background: #f8fafc;
+        text-align: left;
+      }
+
+      .use-case-label {
+        margin-bottom: 12px;
+        color: var(--navy);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        text-align: center;
+      }
+
+      .use-case-flow {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .use-case-step {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        align-items: center;
+        min-height: 62px;
+        padding: 10px 12px;
+        border: 1px solid #d7dee9;
+        border-radius: 12px;
+        background: #fff;
+      }
+
+      .use-case-number {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        border-radius: 50%;
+        color: #fff;
+        background: var(--navy);
+        font-size: 14px;
+        font-weight: 950;
+      }
+
+      .use-case-step:nth-child(3) .use-case-number {
+        background: var(--orange);
+      }
+
+      .use-case-step:nth-child(5) .use-case-number {
+        background: var(--green);
+      }
+
+      .use-case-step strong {
+        display: block;
+        color: var(--navy);
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .use-case-step span:last-child {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .use-case-arrow {
+        color: #98a2b3;
+        font-size: 22px;
+        font-weight: 900;
+      }
+
       .block-heading {
         display: flex;
         align-items: baseline;
@@ -111,16 +435,9 @@
         font-weight: 800;
       }
 
-      .panel {
-        border: 1px solid #cbd5e1;
-        border-radius: 18px;
-        background: var(--soft);
-        padding: 18px 22px;
-      }
-
       .top-grid {
         display: grid;
-        grid-template-columns: 1fr 380px;
+        grid-template-columns: 1fr;
         gap: 24px;
         align-items: start;
       }
@@ -336,14 +653,6 @@
         border-left: 4px solid var(--orange);
       }
 
-      .remark {
-        min-height: 48px;
-        margin-top: 10px;
-        color: #344054;
-        font-size: 14px;
-        line-height: 1.45;
-      }
-
       .summary {
         position: sticky;
         top: 18px;
@@ -397,6 +706,7 @@
         color: var(--navy);
         font-size: 15px;
         font-weight: 850;
+        white-space: nowrap;
       }
 
       .bar {
@@ -430,6 +740,15 @@
         line-height: 1.55;
       }
 
+      /* The final report uses the quadrant-side briefing cards for client-facing advice. */
+      .result-card .suggestion {
+        display: none;
+      }
+
+      #suggestion {
+        display: none;
+      }
+
       .subresult {
         display: grid;
         gap: 8px;
@@ -452,8 +771,28 @@
         color: var(--navy);
       }
 
-      .action-panel,
-      .pressure-panel {
+      .result-reason {
+        display: grid;
+        gap: 10px;
+        margin: 0 22px 18px;
+      }
+
+      .reason-box {
+        padding: 12px 14px;
+        border-radius: 10px;
+        color: #344054;
+        background: #f8fafc;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .reason-box strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--navy);
+      }
+
+      .action-panel {
         margin-top: 24px;
         border: 1px solid #cbd5e1;
         border-radius: 18px;
@@ -504,13 +843,6 @@
         width: 18px;
         height: 18px;
         accent-color: var(--orange);
-      }
-
-      .action-note {
-        margin-top: 14px;
-        color: #667085;
-        font-size: 13px;
-        line-height: 1.5;
       }
 
       .select-grid {
@@ -565,57 +897,196 @@
         font-weight: 750;
       }
 
+      .workflow-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .workflow-status {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .generate-report {
+        min-height: 44px;
+        flex: 0 0 auto;
+        border: 0;
+        border-radius: 10px;
+        padding: 0 18px;
+        color: #fff;
+        background: var(--navy);
+        cursor: pointer;
+        font: inherit;
+        font-weight: 900;
+      }
+
+      .generate-report:disabled {
+        color: #98a2b3;
+        background: #e4e7ec;
+        cursor: not-allowed;
+      }
+
+      .report-status {
+        margin: -4px auto 14px;
+        color: var(--muted);
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .final-summary-strip {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.18fr);
+        gap: 18px;
+        align-items: stretch;
+        margin-bottom: 16px;
+        padding: 18px 20px;
+        border: 1px solid #cbd5e1;
+        border-radius: 16px;
+        background: #f8fafc;
+      }
+
+      .final-summary-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 112px;
+        padding: 4px 18px 4px 2px;
+        border-right: 1px solid #d7dee9;
+      }
+
+      .final-summary-label {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .final-summary-title {
+        margin-top: 4px;
+        color: var(--navy);
+        font-size: 28px;
+        font-weight: 950;
+        line-height: 1.2;
+      }
+
+      .final-summary-action {
+        margin-top: 8px;
+        color: #475467;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .final-summary-scores {
+        display: grid;
+        align-content: center;
+        gap: 11px;
+      }
+
+      .final-score-row {
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr) 48px;
+        gap: 10px;
+        align-items: center;
+        color: #475467;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .final-score-bar {
+        height: 8px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e4e7ec;
+      }
+
+      .final-score-bar i {
+        display: block;
+        width: 0;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--navy);
+        transition: width 0.2s ease, background 0.2s ease;
+      }
+
+      .final-score-row strong {
+        color: var(--navy);
+        text-align: right;
+        font-size: 13px;
+      }
+
+      .report-risk-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .report-risk-card {
+        min-height: 112px;
+        padding: 14px 16px;
+        border: 1px solid #d7dee9;
+        border-radius: 12px;
+        background: #f8fafc;
+      }
+
+      .report-risk-card h3 {
+        margin: 0 0 7px;
+        color: var(--navy);
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .report-risk-card p {
+        margin: 0;
+        color: #475467;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .briefing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      #briefingPanel .briefing-grid,
+      #briefingPanel .risk-result {
+        display: none;
+      }
+
+      .briefing-card {
+        min-height: 108px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+      }
+
+      .briefing-card h3 {
+        margin: 0 0 7px;
+        color: var(--navy);
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .briefing-card p {
+        margin: 0;
+        color: #475467;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
       .result-title,
       .result-action,
       .suggestion,
       .risk-result,
       .dimension-foot strong {
         transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      }
-
-      .pressure-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .pressure-field {
-        display: grid;
-        gap: 8px;
-      }
-
-      .pressure-field.full {
-        grid-column: 1 / -1;
-      }
-
-      .pressure-field label {
-        color: var(--navy);
-        font-size: 14px;
-        font-weight: 850;
-      }
-
-      .pressure-field textarea {
-        width: 100%;
-        min-height: 76px;
-        resize: vertical;
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        padding: 10px 12px;
-        color: var(--text);
-        background: #fff;
-        font: inherit;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-
-      .pressure-result {
-        min-height: 76px;
-        padding: 12px 14px;
-        border-radius: 10px;
-        color: #475467;
-        background: #fff;
-        font-size: 14px;
-        line-height: 1.55;
       }
 
       .controls {
@@ -662,13 +1133,270 @@
         border: 1px solid #cbd5e1;
       }
 
+      .integrated-report {
+        overflow: hidden;
+        border: 2px solid var(--navy);
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: 10px 14px 0 rgba(15, 23, 42, 0.05);
+      }
+
+      .integrated-report .summary {
+        position: static;
+      }
+
+      .integrated-report .result-card {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .integrated-report .quadrant-wrap {
+        border: 0;
+        border-top: 1px solid #cbd5e1;
+        border-radius: 0;
+      }
+
+      .report-four-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        padding: 18px;
+      }
+
+      .report-box {
+        min-width: 0;
+        padding: 16px;
+        border: 1px solid #d7dee9;
+        border-radius: 10px;
+        background: #fff;
+      }
+
+      .report-box-title {
+        margin-bottom: 12px;
+        color: var(--navy);
+        font-size: 16px;
+        font-weight: 950;
+      }
+
+      .report-model-box {
+        grid-column: 1 / -1;
+        border-top: 4px solid var(--navy);
+      }
+
+      .report-four-grid > .report-box:nth-child(2) {
+        border-top: 4px solid var(--orange);
+      }
+
+      .report-four-grid > .report-box:nth-child(3) {
+        border-top: 4px solid var(--blue);
+      }
+
+      .report-four-grid > .report-box:nth-child(4) {
+        border-top: 4px solid var(--red);
+      }
+
+      .report-model-box .report-map-shell {
+        min-height: 360px;
+        padding: 28px 48px;
+      }
+
+      .report-model-box .quadrant {
+        grid-template-rows: repeat(2, minmax(145px, auto));
+        gap: 12px;
+        margin: 10px 0;
+      }
+
+      .report-model-box .quad-card {
+        min-height: 145px;
+        padding: 18px 20px;
+        border-radius: 14px;
+      }
+
+      .report-model-box .quad-title {
+        font-size: 24px;
+      }
+
+      .report-model-box .quad-line {
+        margin-top: 7px;
+        font-size: 14px;
+      }
+
+      .report-box .quadrant-notice {
+        margin-top: 10px;
+        text-align: left;
+      }
+
+      .report-box .caption {
+        margin-top: 8px;
+        text-align: left;
+        font-size: 12px;
+      }
+
+      .report-box .metrics {
+        padding: 4px 0 0;
+      }
+
+      .report-box .metric {
+        grid-template-columns: 92px minmax(0, 1fr) 44px;
+      }
+
+      .report-advice-title {
+        color: var(--orange);
+        font-size: 24px;
+        font-weight: 950;
+      }
+
+      .report-advice-copy,
+      .report-risk-copy {
+        margin: 10px 0 0;
+        color: #475467;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .report-box .subresult,
+      .report-box .result-reason {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .report-box .subresult {
+        margin-top: 14px;
+        margin-bottom: 0;
+      }
+
+      .report-box .result-reason {
+        margin-top: 14px;
+        margin-bottom: 0;
+      }
+
+      .report-box .report-risk-card {
+        min-height: 0;
+        margin-top: 10px;
+        padding: 12px 14px;
+      }
+
+      .report-box .report-risk-card:first-child {
+        margin-top: 0;
+      }
+
+      .report-box .report-risk-card h3 {
+        margin-bottom: 5px;
+      }
+
+      .report-box .report-risk-card p {
+        font-size: 13px;
+      }
+
+      .report-four-grid + .controls {
+        padding-top: 0;
+      }
+
+      .report-board {
+        display: grid;
+        grid-template-columns: minmax(0, 1.22fr) minmax(300px, 0.78fr);
+        gap: 22px;
+        align-items: stretch;
+      }
+
+      .report-brief-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        padding: 18px;
+        border: 1px solid #d7dee9;
+        border-radius: 16px;
+        background: #f8fafc;
+      }
+
+      .report-brief-panel .quadrant-notice {
+        margin-top: 0;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #d7dee9;
+        text-align: left;
+      }
+
+      .report-brief-panel .caption {
+        margin-top: 12px;
+        text-align: left;
+        font-size: 12px;
+      }
+
+      .report-brief-panel .report-risk-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .report-map-shell {
+        position: relative;
+        padding: 28px 54px;
+      }
+
+      .report-map-shell::before,
+      .report-map-shell::after {
+        position: absolute;
+        z-index: 0;
+        content: "";
+        background: #b8c1cf;
+      }
+
+      .report-map-shell::before {
+        top: 28px;
+        bottom: 28px;
+        left: 50%;
+        width: 1px;
+      }
+
+      .report-map-shell::after {
+        top: 50%;
+        right: 54px;
+        left: 54px;
+        height: 1px;
+      }
+
+      .report-axis-top,
+      .report-axis-bottom,
+      .report-axis-left,
+      .report-axis-right {
+        position: absolute;
+        z-index: 2;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .report-axis-top {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .report-axis-bottom {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .report-axis-left {
+        bottom: 8px;
+        left: 0;
+      }
+
+      .report-axis-right {
+        right: 0;
+        bottom: 8px;
+      }
+
       .quadrant {
         position: relative;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(2, 210px);
         gap: 18px;
-        margin: 10px 34px 32px 54px;
+        margin: 10px 0;
       }
 
       .quad-card {
@@ -699,6 +1427,7 @@
         color: #111827;
         font-size: 18px;
         font-weight: 750;
+        overflow-wrap: anywhere;
       }
 
       .quad-red {
@@ -745,6 +1474,14 @@
         font-size: 15px;
       }
 
+      .quadrant-notice {
+        margin-top: 10px;
+        color: #475467;
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
       .disclaimer {
         margin-top: 22px;
         padding: 16px 20px;
@@ -773,7 +1510,7 @@
 
       @media (max-width: 760px) {
         body {
-          padding-bottom: 112px;
+          padding-bottom: 126px;
         }
 
         .page {
@@ -802,6 +1539,30 @@
           text-align: left;
         }
 
+        .use-case {
+          margin-top: 16px;
+          padding: 14px 12px;
+          border-radius: 14px;
+        }
+
+        .use-case-label {
+          margin-bottom: 10px;
+          text-align: left;
+        }
+
+        .use-case-flow {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .use-case-arrow {
+          display: none;
+        }
+
+        .use-case-step {
+          min-height: 56px;
+        }
+
         .brand-logo {
           width: 86px;
           height: 56px;
@@ -815,8 +1576,8 @@
           left: 12px;
           z-index: 20;
           display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          gap: 12px;
+          grid-template-columns: minmax(0, 1fr) auto auto auto;
+          gap: 7px;
           align-items: center;
           padding: 12px 12px 12px 14px;
           border: 1px solid rgba(7, 25, 54, 0.14);
@@ -868,9 +1629,111 @@
           font-weight: 900;
         }
 
-        .panel {
-          padding: 14px;
+        .mobile-step-button {
+          min-height: 42px;
+          border: 1px solid #cbd5e1;
+          border-radius: 12px;
+          padding: 0 10px;
+          color: var(--navy);
+          background: #fff;
+          font: inherit;
+          font-size: 13px;
+          font-weight: 900;
+        }
+
+        .mobile-step-button:disabled {
+          color: #98a2b3;
+          background: #f2f4f7;
+        }
+
+        .mobile-step-status {
+          grid-column: 1 / -1;
+          color: var(--muted);
+          font-size: 11px;
+          line-height: 1.35;
+        }
+
+        .example-report {
+          margin-bottom: 20px;
+          padding: 16px 14px;
           border-radius: 14px;
+        }
+
+        .example-head {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+          margin-bottom: 14px;
+        }
+
+        .example-title {
+          font-size: 22px;
+        }
+
+        .example-start {
+          width: 100%;
+        }
+
+        .example-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .example-result,
+        .example-bars,
+        .example-quadrant {
+          padding: 14px;
+          border-radius: 12px;
+        }
+
+        .example-bar-row {
+          grid-template-columns: 76px 1fr 30px;
+        }
+
+        .example-map-shell {
+          min-height: 300px;
+          padding: 31px 46px;
+        }
+
+        .example-map-shell::after {
+          right: 46px;
+          left: 46px;
+        }
+
+        .example-map-grid {
+          grid-template-rows: repeat(2, minmax(94px, 1fr));
+          height: 238px;
+          gap: 8px;
+        }
+
+        .example-quad-card {
+          padding: 10px 6px;
+          font-size: 16px;
+        }
+
+        .example-quad-card small {
+          font-size: 10px;
+        }
+
+        .report-overline {
+          margin-right: 16px;
+          margin-left: 16px;
+        }
+
+        .scoring .item:not(.mobile-active) {
+          display: none;
+        }
+
+        .scoring .card {
+          display: none;
+        }
+
+        .scoring .card:has(.mobile-active) {
+          display: block;
+        }
+
+        .scoring .card:has(.mobile-active) .items {
+          padding-bottom: 10px;
         }
 
         .card-head {
@@ -965,18 +1828,22 @@
         }
 
         .metric {
-          grid-template-columns: 78px 1fr 48px;
+          grid-template-columns: 90px 1fr 48px;
           gap: 8px;
         }
 
+        .metric-name {
+          font-size: 13px;
+        }
+
         .suggestion,
-        .subresult {
+        .subresult,
+        .result-reason {
           margin-right: 16px;
           margin-left: 16px;
         }
 
-        .action-panel,
-        .pressure-panel {
+        .action-panel {
           margin-top: 18px;
           padding: 18px 14px;
           border-radius: 14px;
@@ -988,6 +1855,15 @@
 
         .subsection-desc {
           line-height: 1.55;
+        }
+
+        .workflow-footer {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .generate-report {
+          width: 100%;
         }
 
         .action-grid {
@@ -1009,6 +1885,31 @@
 
         .quadrant-wrap {
           padding: 18px 12px 30px;
+        }
+
+        .report-board {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .report-brief-panel {
+          padding: 15px;
+        }
+
+        .report-map-shell {
+          padding: 20px 42px;
+        }
+
+        .report-map-shell::after {
+          right: 42px;
+          left: 42px;
+        }
+
+        .report-axis-top,
+        .report-axis-bottom,
+        .report-axis-left,
+        .report-axis-right {
+          font-size: 11px;
         }
 
         .quadrant {
@@ -1050,6 +1951,66 @@
         .select-field.full {
           grid-column: auto;
         }
+
+        .briefing-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .report-risk-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .report-four-grid {
+          grid-template-columns: 1fr;
+          padding: 12px;
+        }
+
+        .report-model-box {
+          grid-row: auto;
+        }
+
+        .report-model-box .report-map-shell {
+          min-height: 330px;
+          padding: 20px 38px;
+        }
+
+        .report-model-box .quad-card {
+          min-height: 135px;
+          padding: 16px 14px;
+        }
+
+        .report-model-box .quad-title {
+          font-size: 21px;
+        }
+
+        .report-model-box .quad-line {
+          font-size: 12px;
+        }
+
+        .final-summary-strip {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          padding: 16px;
+        }
+
+        .final-summary-main {
+          min-height: 0;
+          padding: 0 0 13px;
+          border-right: 0;
+          border-bottom: 1px solid #d7dee9;
+        }
+
+        .final-summary-title {
+          font-size: 24px;
+        }
+
+        .final-score-row {
+          grid-template-columns: 86px minmax(0, 1fr) 44px;
+          gap: 8px;
+          font-size: 11px;
+        }
       }
 
       @media print {
@@ -1086,77 +2047,95 @@
   <body>
     <main class="page">
       <header class="hero">
-        <img class="brand-logo" src="https://ip-fengring-cn-site.oss-cn-beijing.aliyuncs.com/assets/fengming-logo.png" alt="锋鸣智能测试系统" />
+        <img class="brand-logo" src="assets/fengming-logo.png" alt="锋鸣智能测试系统" />
         <h1>企业知产维权舆情风险研判模型</h1>
         <div class="subtitle">律师维权前舆情研判表</div>
         <p class="intro">本页面用于知识产权律师维权前研判舆情敏感度、传播扩散风险与重大法律不确定性，不替代侵权判断、诉讼预测或具体法律行动方案。</p>
+        <div class="use-case" aria-label="律师使用场景">
+          <div class="use-case-label">律师日常使用场景</div>
+          <div class="use-case-flow">
+            <div class="use-case-step">
+              <span class="use-case-number">1</span>
+              <span><strong>维权前内部研判</strong><span>判断证据、公众同情和舆论偏离风险</span></span>
+            </div>
+            <div class="use-case-arrow" aria-hidden="true">→</div>
+            <div class="use-case-step">
+              <span class="use-case-number">2</span>
+              <span><strong>客户汇报前整理</strong><span>把评分转化为客户听得懂的风险提示</span></span>
+            </div>
+            <div class="use-case-arrow" aria-hidden="true">→</div>
+            <div class="use-case-step">
+              <span class="use-case-number">3</span>
+              <span><strong>形成可视化报告</strong><span>明确可说明、重点提示和暂不下结论事项</span></span>
+            </div>
+          </div>
+        </div>
       </header>
+
+      <section class="example-report" aria-labelledby="exampleReportTitle">
+        <div class="example-head">
+          <div>
+            <div class="example-kicker">先看结果，再开始评估</div>
+            <h2 class="example-title" id="exampleReportTitle">示例案情报告｜某国际奢侈品牌维权</h2>
+            <p class="example-desc">以某国际奢侈品牌针对宣传用语及视觉素材的维权争议为例，预览最终报告如何呈现加权汇总、模型定位、推进建议和风险提示。</p>
+          </div>
+          <button class="example-start" id="startAssessmentBtn" type="button">开始我的案件评估</button>
+        </div>
+        <div class="example-grid">
+          <div class="example-result">
+            <div class="example-result-label">示例案件：某国际奢侈品牌宣传用语及视觉素材维权</div>
+            <div class="example-result-title">谨慎推进</div>
+            <div class="example-result-copy">证据基础较强，但对方具有创业者身份，且视觉对比素材容易形成强弱叙事。建议控制表达节奏，并在汇报中提示传播扩散和法律复核边界。</div>
+          </div>
+          <div class="example-bars" aria-label="示例加权汇总">
+            <div class="example-bar-row"><span>证据充分度</span><div class="example-bar blue"><span></span></div><strong>4.10</strong></div>
+            <div class="example-bar-row"><span>公众同情度</span><div class="example-bar brown"><span></span></div><strong>3.70</strong></div>
+            <div class="example-bar-row"><span>舆论偏离度</span><div class="example-bar orange"><span></span></div><strong>3.40</strong></div>
+            <div class="example-bar-row"><span>综合舆情风险</span><div class="example-bar orange"><span style="width:71%"></span></div><strong>7.10</strong></div>
+          </div>
+          <div class="example-quadrant">
+            <div class="example-quadrant-title">示例模型定位</div>
+            <div class="example-map-shell" aria-label="示例四象限模型">
+              <span class="example-axis-top">综合舆情风险高</span>
+              <span class="example-axis-bottom">综合舆情风险低</span>
+              <span class="example-axis-left">证据充分度低</span>
+              <span class="example-axis-right">证据充分度高</span>
+              <div class="example-map-grid">
+                <div class="example-quad-card example-quad-red">暂缓行动<small>补事实｜完成复核</small></div>
+                <div class="example-quad-card example-quad-orange">谨慎推进<small>控制措辞｜锁定主叙事<span class="example-marker">示例</span></small></div>
+                <div class="example-quad-card example-quad-slate">补证观察<small>继续取证｜监测扩散</small></div>
+                <div class="example-quad-card example-quad-green">正常推进<small>适度说明｜只说事实</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div class="mobile-resultbar" aria-live="polite">
         <div>
-          <div class="mobile-resultbar-title" id="mobileResultTitle">待完成基础研判</div>
-          <div class="mobile-resultbar-meta" id="mobileResultMeta">已完成 0/12 项</div>
+          <div class="mobile-resultbar-title" id="mobileResultTitle">待完成风险评估</div>
+          <div class="mobile-resultbar-meta" id="mobileResultMeta">第 1 题｜已完成 0/12 项</div>
           <div class="mobile-progress"><div class="mobile-progress-fill" id="mobileProgressFill"></div></div>
         </div>
-        <button class="mobile-jump" id="mobileJumpBtn" type="button">看结果</button>
+        <button class="mobile-step-button" id="mobilePrevBtn" type="button">上一题</button>
+        <button class="mobile-step-button" id="mobileNextBtn" type="button">下一题</button>
+        <button class="mobile-jump" id="mobileJumpBtn" type="button">看报告</button>
+        <div class="mobile-step-status" id="mobileStepStatus">请选择当前题目后继续</div>
       </div>
 
       <div class="block-heading">
-        <h2>一、基础研判</h2>
+        <h2>一、风险评估</h2>
         <span id="progressNote">已完成 0/12 项｜请选择最接近的 1/3/5 分档位</span>
       </div>
 
       <section class="top-grid">
         <div class="scoring" id="scoring"></div>
 
-        <aside class="summary" id="summaryPanel">
-          <div class="result-card">
-            <div class="result-head" id="resultHead">
-              <div class="result-label">基础研判结果</div>
-              <div class="result-title" id="resultTitle" aria-live="polite">待完成基础研判</div>
-              <div class="result-action" id="resultAction">完成左侧 12 项评分后生成</div>
-            </div>
-            <div class="metrics">
-              <div class="metric">
-                <div class="metric-name">材料硬度</div>
-                <div class="bar"><div class="bar-fill" id="materialBar"></div></div>
-                <div class="metric-value" id="materialScore">—</div>
-              </div>
-              <div class="metric">
-                <div class="metric-name">对象弱度</div>
-                <div class="bar"><div class="bar-fill" id="objectBar"></div></div>
-                <div class="metric-value" id="objectScore">—</div>
-              </div>
-              <div class="metric">
-                <div class="metric-name">叙事偏离</div>
-                <div class="bar"><div class="bar-fill" id="narrativeBar"></div></div>
-                <div class="metric-value" id="narrativeScore">—</div>
-              </div>
-              <div class="metric">
-                <div class="metric-name">舆情敏感</div>
-                <div class="bar"><div class="bar-fill" id="sensitivityBar"></div></div>
-                <div class="metric-value" id="sensitivityScore">—</div>
-              </div>
-            </div>
-            <p class="suggestion" id="suggestion">
-              完成基础评分后生成结果。
-            </p>
-            <div class="subresult">
-              <div class="subresult-row"><span>基础象限</span><strong id="rawResult">待评分</strong></div>
-              <div class="subresult-row"><span>不利动作建议</span><strong id="mediaTip">待选择</strong></div>
-              <div class="subresult-row"><span>法律不确定性</span><strong id="adjustStatus">待复核</strong></div>
-            </div>
-            <div class="controls">
-              <button class="control-button" id="resetBtn" type="button">重置</button>
-              <button class="control-button primary" type="button" onclick="window.print()">打印/存为PDF</button>
-            </div>
-          </div>
-        </aside>
       </section>
 
-      <section class="action-panel">
-        <h2 class="subsection-title">二、不利动作建议</h2>
-        <p class="subsection-desc">勾选已经发生或拟采取的动作，页面只生成提示，不改变基础研判分数。</p>
+      <section class="action-panel" id="briefingPanel">
+        <h2 class="subsection-title">二、传播风险提示</h2>
+        <p class="subsection-desc">选择已经出现或可能出现的传播情形，系统将整理为最终研判报告中的风险提示。</p>
         <div class="action-grid" id="actionChecks"></div>
         <div class="select-grid">
           <div class="select-field">
@@ -1208,36 +2187,85 @@
             </select>
           </div>
         </div>
-        <div class="risk-result" id="riskResult" aria-live="polite">完成选择后生成不利动作与传播提示。</div>
+        <div class="briefing-grid" aria-live="polite">
+          <div class="briefing-card"><h3>可以向客户明确说明</h3><p id="briefingClear">完成评估后生成。</p></div>
+          <div class="briefing-card"><h3>需要重点提示客户</h3><p id="briefingFocus">完成评估后生成。</p></div>
+          <div class="briefing-card"><h3>暂不宜直接下结论</h3><p id="briefingCaution">完成评估后生成。</p></div>
+        </div>
+        <div class="risk-result" id="riskResult" aria-live="polite">完成选择后生成传播风险提示。</div>
+        <div class="workflow-footer">
+          <div class="workflow-status" id="workflowStatus">完成12项评分后，进入传播风险提示和完整报告生成流程。</div>
+          <button class="generate-report" id="generateReportBtn" type="button">完成剩余评分</button>
+        </div>
       </section>
 
-      <section class="quadrant-section">
-        <h2 class="section-title">模型定位</h2>
-        <div class="quadrant-wrap">
-          <div class="quadrant" id="quadrant">
-            <div class="quad-card quad-red" data-zone="danger">
-              <div class="quad-title">高敏感区｜暂缓形成公开结论</div>
-              <div class="quad-line">材料＜3.50｜敏感≥6.00</div>
-              <div class="quad-line">先补事实｜完成复核｜暂缓传播</div>
-            </div>
-            <div class="quad-card quad-orange" data-zone="restrain">
-              <div class="quad-title">克制区｜法律行动与传播分离</div>
-              <div class="quad-line">材料≥3.50｜敏感≥6.00</div>
-              <div class="quad-line">控制措辞｜分离节奏｜锁定主叙事</div>
-            </div>
-            <div class="quad-card quad-slate" data-zone="observe">
-              <div class="quad-title">观察区｜先补充事实支撑</div>
-              <div class="quad-line">材料＜3.50｜敏感＜6.00</div>
-              <div class="quad-line">继续取证｜监测扩散｜不急于公开</div>
-            </div>
-            <div class="quad-card quad-green" data-zone="priority">
-              <div class="quad-title">低敏感区｜可按程序推进</div>
-              <div class="quad-line">材料≥3.50｜敏感＜6.00</div>
-              <div class="quad-line">适度说明｜只说事实｜避免扩大化</div>
-            </div>
-            <div class="marker" id="marker" aria-hidden="true"></div>
+      <section class="quadrant-section" id="reportSection">
+        <h2 class="section-title">三、可视化研判报告</h2>
+        <div class="report-status" id="reportStatus">完成风险评估后生成完整报告。</div>
+        <div class="integrated-report">
+          <div class="result-head" id="resultHead">
+            <div class="result-label">客户汇报可视化结果</div>
+            <div class="result-title" id="resultTitle" aria-live="polite">待完成风险评估</div>
+            <div class="result-action" id="resultAction">完成12项评分后生成</div>
           </div>
-          <div class="caption">模型定位依据：材料硬度分与对象弱度、叙事偏离度合计结果；当前定位仅用于维权前舆情研判。</div>
+          <div class="report-four-grid">
+            <section class="report-box report-model-box">
+              <div class="report-box-title">模型定位</div>
+              <div class="report-map-shell">
+                <span class="report-axis-top">综合舆情风险高</span>
+                <span class="report-axis-bottom">综合舆情风险低</span>
+                <span class="report-axis-left">证据充分度低</span>
+                <span class="report-axis-right">证据充分度高</span>
+                <div class="quadrant" id="quadrant">
+                  <div class="quad-card quad-red" data-zone="danger"><div class="quad-title">暂缓行动</div><div class="quad-line">证据充分度＜3.50｜综合舆情风险≥6.00</div><div class="quad-line">先补事实｜完成复核｜暂缓传播</div></div>
+                  <div class="quad-card quad-orange" data-zone="restrain"><div class="quad-title">谨慎推进</div><div class="quad-line">证据充分度≥3.50｜综合舆情风险≥6.00</div><div class="quad-line">控制措辞｜分离节奏｜锁定主叙事</div></div>
+                  <div class="quad-card quad-slate" data-zone="observe"><div class="quad-title">补证观察</div><div class="quad-line">证据充分度＜3.50｜综合舆情风险＜6.00</div><div class="quad-line">继续取证｜监测扩散｜不急于公开</div></div>
+                  <div class="quad-card quad-green" data-zone="priority"><div class="quad-title">正常推进</div><div class="quad-line">证据充分度≥3.50｜综合舆情风险＜6.00</div><div class="quad-line">适度说明｜只说事实｜避免扩大化</div></div>
+                  <div class="marker" id="marker" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="quadrant-notice" id="quadrantNotice">完成风险评估后显示基础象限位置。</div>
+              <div class="caption">模型定位依据：证据充分度与综合舆情风险共同决定区域。</div>
+            </section>
+
+            <section class="report-box">
+              <div class="report-box-title">推进建议</div>
+              <div class="report-advice-title" id="reportAdviceTitle">待生成</div>
+              <p class="report-advice-copy" id="reportRiskConclusion">完成评分后生成客户汇报结论。</p>
+              <div class="result-reason">
+                <div class="reason-box"><strong>进入原因</strong><span id="resultReason">完成评分后显示当前评估进入该区域的主要原因。</span></div>
+              </div>
+            </section>
+
+            <section class="report-box">
+              <div class="report-box-title">加权汇总</div>
+              <div class="metrics">
+                <div class="metric"><div class="metric-name">证据充分度</div><div class="bar"><div class="bar-fill" id="materialBar"></div></div><div class="metric-value" id="materialScore">—</div></div>
+                <div class="metric"><div class="metric-name">公众同情度</div><div class="bar"><div class="bar-fill" id="objectBar"></div></div><div class="metric-value" id="objectScore">—</div></div>
+                <div class="metric"><div class="metric-name">舆论偏离度</div><div class="bar"><div class="bar-fill" id="narrativeBar"></div></div><div class="metric-value" id="narrativeScore">—</div></div>
+                <div class="metric"><div class="metric-name">综合舆情风险</div><div class="bar"><div class="bar-fill" id="sensitivityBar"></div></div><div class="metric-value" id="sensitivityScore">—</div></div>
+              </div>
+              <div class="subresult">
+                <div class="subresult-row"><span>基础象限</span><strong id="rawResult">待评分</strong></div>
+                <div class="subresult-row"><span>传播提示</span><strong id="mediaTip">待选择</strong></div>
+                <div class="subresult-row"><span>法律不确定性</span><strong id="adjustStatus">待复核</strong></div>
+              </div>
+            </section>
+
+            <section class="report-box">
+              <div class="report-box-title">风险提示</div>
+              <div class="report-risk-card"><h3>主要风险提示</h3><p id="reportRiskFocus">完成评分后生成。</p></div>
+              <div class="report-risk-card"><h3>表达边界</h3><p id="reportRiskBoundary">完成评分后生成。</p></div>
+              <div class="result-reason">
+                <div class="reason-box"><strong>汇报前核对</strong><span id="resultGap">完成评分后显示向客户汇报前需要核对的事项。</span></div>
+              </div>
+            </section>
+          </div>
+          <p class="suggestion" id="suggestion">完成风险评估后生成结果。</p>
+          <div class="controls">
+            <button class="control-button" id="resetBtn" type="button">重置</button>
+            <button class="control-button primary" type="button" onclick="window.print()">打印/存为PDF</button>
+          </div>
         </div>
       </section>
 
@@ -1248,19 +2276,19 @@
 
     <script>
       const dimensions = [
-        { id: "material", title: "材料硬度", desc: "权利、证据与可公开事实的支撑程度", icon: "证", className: "material", items: [
+        { id: "material", title: "证据充分度", desc: "权利、证据与可公开事实的支撑程度", icon: "证", className: "material", items: [
           { id: "right_stability", name: "权利稳定性", weight: 0.30, tip: "看权利基础是否清楚、有效、归属明确，是否存在撤销、无效、授权链条等重大争议。", standards: { 1: "权利不清或主体不清", 3: "权利基本明确但仍需解释", 5: "权利清楚且稳定" } },
           { id: "evidence_visibility", name: "证据直观性", weight: 0.25, tip: "看非专业公众能否快速理解相似点或侵权指向，是否需要大量专业解释才能说明。", standards: { 1: "公众难以看懂相似点", 3: "需要专业解释才能说明", 5: "一图或一组对比即可看懂" } },
           { id: "evidence_chain", name: "取证完整性", weight: 0.25, tip: "看页面、实物、交易、时间、主体等证据是否已经固定，是否能支撑后续说明。", standards: { 1: "尚未固定关键证据", 3: "部分固定但证据链不完整", 5: "公证、时间戳、购买链等较完整" } },
           { id: "facts_public", name: "事实公开性", weight: 0.20, tip: "看关键事实是否可以被公开解释，是否涉及未核验事实、商业秘密或不宜公开的信息。", standards: { 1: "关键事实未核验或不宜公开", 3: "部分事实可以说明", 5: "关键事实已核验且可清楚说明" } },
         ] },
-        { id: "object", title: "对象弱度", desc: "对方获得同情、发动反击的可能程度", icon: "人", className: "object", items: [
+        { id: "object", title: "公众同情度", desc: "对方获得公众同情、发动反击的可能程度", icon: "人", className: "object", items: [
           { id: "subject_size", name: "主体体量", weight: 0.35, tip: "看维权对象在公众视角中是成熟商业主体，还是更容易被理解为小经营者或个人。", standards: { 1: "成熟商业主体", 3: "区域品牌或成长品牌", 5: "小商户、个人或创作者" } },
           { id: "identity_emotion", name: "身份情绪", weight: 0.25, tip: "看对方是否具备本土、创业、个体经营、生计压力等容易触发同情的身份标签。", standards: { 1: "无明显同情身份", 3: "带有本土、创业或加盟标签", 5: "生计型、个人型或弱势身份明显" } },
           { id: "relationship_complexity", name: "关系复杂度", weight: 0.20, tip: "看双方是否存在加盟、经销、合作、前合作等关系，是否容易被解读为内部纠纷。", standards: { 1: "陌生侵权主体", 3: "同业或间接合作关系", 5: "加盟商、经销商或前合作方" } },
           { id: "counter_ability", name: "反击能力", weight: 0.20, tip: "看对方是否有粉丝、媒体资源、社群动员能力，能否把法律争议转化为传播议题。", standards: { 1: "反击能力低", 3: "有一定粉丝或媒体关系", 5: "具备较强社交媒体动员能力" } },
         ] },
-        { id: "narrative", title: "叙事偏离度", desc: "法律争点被公众重新包装后的传播风险", icon: "叙", className: "narrative", items: [
+        { id: "narrative", title: "舆论偏离度", desc: "法律争点被公众重新包装后的传播偏离程度", icon: "叙", className: "narrative", items: [
           { id: "public_word", name: "公共词风险", weight: 0.30, tip: "看争议对象是否涉及通用词、地名、公共文化资源或行业惯用表达。", standards: { 1: "非公共表达", 3: "具有一定描述性", 5: "涉及行业通用词、地方名称或公共资源" } },
           { id: "power_story", name: "强弱叙事", weight: 0.25, tip: "看公众是否容易把案件理解成强者压制弱者，而不是普通权利边界争议。", standards: { 1: "不易形成强弱对立", 3: "存在一定主体差异", 5: "极易形成大欺小或大牌霸权叙事" } },
           { id: "industry_history", name: "行业旧账", weight: 0.20, tip: "看事件是否容易串联行业争议、加盟纠纷、同质化竞争、出海或品牌旧账。", standards: { 1: "无明显行业旧账", 3: "可能被联想到同行竞争", 5: "容易串联同质化、加盟或出海等旧账" } },
@@ -1269,31 +2297,37 @@
       ];
 
       const state = Object.fromEntries(dimensions.flatMap((dimension) => dimension.items.map((item) => [item.id, null])));
+      const allItems = dimensions.flatMap((dimension) => dimension.items);
+      let mobileQuestionIndex = 0;
+      let reportGenerated = false;
       const actions = [
-        { id: "no_communication", label: "未沟通即发函、投诉或起诉", advice: "建议先完成沟通记录或说明紧迫性。" },
-        { id: "high_claim", label: "高额索赔与行为规模明显不匹配", advice: "建议核验索赔依据、损失或获利基础与表达尺度。" },
-        { id: "batch_action", label: "批量投诉、批量起诉或集中下架", advice: "建议进行个案核验，避免形成无差别维权叙事。" },
-        { id: "public_legal_docs", label: "主动公开律师函、起诉状或索赔金额", advice: "建议谨慎处理未生效文书、金额和对方身份信息。" },
-        { id: "public_pressure", label: "公开点名、号召抵制或多平台施压", advice: "建议暂停主动施压，先统一回应口径并进行专项复核。" },
-        { id: "enough_communication", label: "已充分沟通并给合理整改期，对方仍拒绝整改", advice: "可作为已履行沟通义务的事实背景留存。" },
+        { id: "no_communication", label: "未沟通即发函、投诉或起诉", advice: "汇报时说明是否存在沟通记录，以及为何需要采取当前节奏。" },
+        { id: "high_claim", label: "高额索赔与行为规模明显不匹配", advice: "向客户解释索赔依据、损失或获利基础与行为规模的对应关系。" },
+        { id: "batch_action", label: "批量投诉、批量起诉或集中下架", advice: "提示批量动作容易形成无差别维权叙事，应向客户说明个案差异。" },
+        { id: "public_legal_docs", label: "主动公开律师函、起诉状或索赔金额", advice: "汇报时区分未生效文书、金额估算和对方身份信息，避免绝对化表达。" },
+        { id: "public_pressure", label: "公开点名、号召抵制或多平台施压", advice: "提示主动施压可能放大传播议题，应先统一事实口径。" },
+        { id: "enough_communication", label: "已充分沟通并给合理整改期，对方仍拒绝整改", advice: "可作为已履行沟通义务的事实背景向客户说明。" },
       ];
       const actionState = Object.fromEntries(actions.map((action) => [action.id, false]));
 
       const zones = {
-        danger: { title: "高敏感区｜暂缓形成公开结论", action: "先补事实｜完成复核｜暂缓传播", color: "#b91c1c", mediaTip: "暂缓传播、准备回应", suggestion: "材料支撑或舆情条件不足，先补充事实与核验信息，不急于形成公开叙事。" },
-        restrain: { title: "克制区｜法律行动与传播分离", action: "控制措辞｜分离节奏｜锁定主叙事", color: "#ea580c", mediaTip: "低调处理、控制措辞", suggestion: "基础支撑较强，但公众叙事风险较高。将法律事实与传播表达分开管理。" },
-        observe: { title: "观察区｜先补充事实支撑", action: "继续取证｜监测扩散｜不急于公开", color: "#475569", mediaTip: "暂缓传播、持续监测", suggestion: "当前敏感度暂不突出，但事实支撑不足。先完成取证和事实核验。" },
-        priority: { title: "低敏感区｜可按程序推进", action: "适度说明｜只说事实｜避免扩大化", color: "#166534", mediaTip: "适度说明已核实事实", suggestion: "当前基础研判的舆情阻力相对较低，但仍应只使用已核实事实。" },
+        danger: { title: "暂缓行动", action: "先补事实｜完成复核｜暂缓传播", color: "#b91c1c", mediaTip: "暂缓传播、准备回应", suggestion: "证据充分度或舆情条件不足，先补充事实与核验信息，不急于形成公开叙事。" },
+        restrain: { title: "谨慎推进", action: "控制措辞｜分离节奏｜锁定主叙事", color: "#ea580c", mediaTip: "低调处理、控制措辞", suggestion: "证据基础较强，但公众同情度或舆论偏离度较高。将法律事实与传播表达分开管理。" },
+        observe: { title: "补证观察", action: "继续取证｜监测扩散｜不急于公开", color: "#475569", mediaTip: "暂缓传播、持续监测", suggestion: "当前综合舆情风险暂不突出，但证据充分度不足。先完成取证和事实核验。" },
+        priority: { title: "正常推进", action: "适度说明｜只说事实｜避免扩大化", color: "#166534", mediaTip: "适度说明已核实事实", suggestion: "当前综合舆情风险相对可控，但仍应只使用已核实事实。" },
         legal: { title: "重大法律不确定性｜先复核", action: "暂不形成公开结论", color: "#b91c1c", mediaTip: "暂缓传播、先完成复核", suggestion: "存在重大法律不确定性，基础象限仅作参考，不形成公开叙事结论。" },
         pending: { title: "待完成法律复核", action: "补充核验信息", color: "#92400e", mediaTip: "暂缓形成结论", suggestion: "存在待核验事项，先完成关键事实或法律基础复核。" },
       };
 
       function renderScoring() {
+        let itemIndex = 0;
         document.getElementById("scoring").innerHTML = dimensions.map((dimension) => {
           const items = dimension.items.map((item) => {
+            const currentIndex = itemIndex;
+            itemIndex += 1;
             const buttons = [1, 3, 5].map((score) => `<button class="score-button ${state[item.id] === score ? "active" : ""}" type="button" data-item="${item.id}" data-score="${score}" aria-pressed="${state[item.id] === score}">${score}分</button>`).join("");
             const standards = [1, 3, 5].map((score) => `<div class="score-standard ${state[item.id] === score ? "selected" : ""}">${score}分：${item.standards[score]}</div>`).join("");
-            return `<div class="item"><div class="item-main"><div class="item-name">${item.name}</div><div class="score-tip">评分提示：${item.tip}</div></div><div class="score-buttons">${buttons}</div><div class="score-standards">${standards}</div></div>`;
+            return `<div class="item ${currentIndex === mobileQuestionIndex ? "mobile-active" : ""}" data-question-index="${currentIndex}"><div class="item-main"><div class="item-name">${item.name}</div><div class="score-tip">评分提示：${item.tip}</div></div><div class="score-buttons">${buttons}</div><div class="score-standards">${standards}</div></div>`;
           }).join("");
           return `<article class="card ${dimension.className}"><div class="card-head"><div class="icon">${dimension.icon}</div><div><div class="card-title">${dimension.title}</div><div class="card-desc">${dimension.desc}</div></div></div><div class="items">${items}</div><div class="dimension-foot"><span>维度结论</span><strong id="dimension-conclusion-${dimension.id}" aria-live="polite">待评分</strong></div></article>`;
         }).join("");
@@ -1307,6 +2341,10 @@
         const dimension = dimensions.find((entry) => entry.id === dimensionId);
         if (dimension.items.some((item) => state[item.id] == null)) return null;
         return dimension.items.reduce((sum, item) => sum + state[item.id] * item.weight, 0);
+      }
+
+      function firstIncompleteIndex() {
+        return allItems.findIndex((item) => state[item.id] == null);
       }
 
       function getZone(material, sensitivity) {
@@ -1326,11 +2364,58 @@
         const advice = selected.map((action) => action.advice);
         const stateValue = document.getElementById("narrativeState").value;
         const correction = document.getElementById("factCorrection").value;
-        if (stateValue === "spread") advice.push("不利叙事已明显扩散，建议停止主动传播并统一回应口径。");
-        else if (stateValue === "formed" && correction === "insufficient") advice.push("不利叙事已形成且事实纠偏不足，建议暂缓主动传播。");
-        else if (stateValue === "forming") advice.push("不利叙事具备形成条件，建议提前准备可公开事实和问答口径。");
-        else if (stateValue === "formed" && correction === "sufficient") advice.push("不利叙事已形成但具备纠偏条件，建议统一口径、以被动回应为主。");
+        if (stateValue === "spread") advice.push("汇报提示：不利叙事已明显扩散，外部表达应统一事实口径。");
+        else if (stateValue === "formed" && correction === "insufficient") advice.push("汇报提示：不利叙事已形成且事实纠偏不足，应明确说明信息边界。");
+        else if (stateValue === "forming") advice.push("汇报提示：不利叙事具备形成条件，应提前准备可公开事实和问答口径。");
+        else if (stateValue === "formed" && correction === "sufficient") advice.push("汇报提示：不利叙事已形成但具备纠偏条件，应区分已证实事实和公众解读。");
         return advice;
+      }
+
+      function resultReason(zoneId, material, sensitivity, legal) {
+        if (legal === "major") return "已标记存在重大法律不确定性，当前象限不能直接作为公开研判结论。";
+        if (legal === "pending") return "已标记存在待核验事项，当前结果需要在完成法律基础复核后再确认。";
+        if (!zoneId || material == null || sensitivity == null) return "完成三项维度评分后显示当前评估进入该区域的主要原因。";
+        if (zoneId === "danger") return `证据充分度为 ${material.toFixed(2)}，低于3.50；综合舆情风险为 ${sensitivity.toFixed(2)}，达到6.00及以上。`;
+        if (zoneId === "restrain") return `证据充分度为 ${material.toFixed(2)}，达到3.50；但综合舆情风险为 ${sensitivity.toFixed(2)}，达到6.00及以上。`;
+        if (zoneId === "observe") return `综合舆情风险为 ${sensitivity.toFixed(2)}，暂低于6.00；但证据充分度为 ${material.toFixed(2)}，低于3.50。`;
+        return `证据充分度为 ${material.toFixed(2)}，达到3.50；综合舆情风险为 ${sensitivity.toFixed(2)}，低于6.00。`;
+      }
+
+      function resultGap(zoneId, legal) {
+        const gaps = [];
+        if (zoneId === "danger" || zoneId === "observe") gaps.push("补充并固定权利、主体、时间和交易链证据");
+        if (zoneId === "danger" || zoneId === "restrain") gaps.push("核验对方身份、关系背景及可能形成的公众叙事");
+        if (legal === "pending" || legal === "major") gaps.push("完成重大法律不确定性所涉事实和权利基础复核");
+        return gaps.length ? gaps.join("；") + "。" : "当前未识别出额外的汇报前核对事项，请结合客户反馈持续复核。";
+      }
+
+      function updateBriefing(zoneId, zone, legal, material, sensitivity, mainNarrative, narrativeState) {
+        const clear = document.getElementById("briefingClear");
+        const focus = document.getElementById("briefingFocus");
+        const caution = document.getElementById("briefingCaution");
+        const syncReportRisk = () => {
+          document.getElementById("reportRiskConclusion").textContent = clear.textContent;
+          document.getElementById("reportRiskFocus").textContent = focus.textContent;
+          document.getElementById("reportRiskBoundary").textContent = caution.textContent;
+        };
+        if (material == null || sensitivity == null) {
+          clear.textContent = "完成风险评估后生成可直接向客户说明的结论。";
+          focus.textContent = "完成风险评估后生成客户最需要关注的事项。";
+          caution.textContent = "完成风险评估后生成暂不宜直接下结论的内容。";
+          syncReportRisk();
+          return;
+        }
+        if (zoneId === "priority") clear.textContent = "证据充分度达到判断线，综合舆情风险相对可控，可先围绕已核实事实向客户说明。";
+        else if (zoneId === "observe") clear.textContent = "当前综合舆情风险暂不突出，但证据充分度不足，应向客户明确说明结论仍受材料完整性限制。";
+        else if (zoneId === "restrain") clear.textContent = "证据基础相对充分，但公众同情度或舆论偏离度较高，客户应先理解传播层面的不确定性。";
+        else clear.textContent = "当前证据充分度和舆情条件均不支持形成稳定的公开结论，客户应优先理解风险边界。";
+        focus.textContent = mainNarrative ? `重点提示客户关注：${mainNarrative}。` : zone && zone.suggestion ? zone.suggestion : "重点提示客户关注证据基础、公众叙事和传播扩散条件。";
+        if (legal === "major") caution.textContent = "存在重大法律不确定性，不宜把评分结果表述为侵权成立、胜诉概率或确定性的行动结论。";
+        else if (legal === "pending") caution.textContent = "存在待核验事项，应先说明信息缺口，避免在客户汇报中使用绝对化表述。";
+        else if (narrativeState === "spread") caution.textContent = "不利叙事已经明显扩散，汇报时应区分已确认事实、公众解读和仍待核验的信息。";
+        else if (sensitivity >= 6) caution.textContent = "综合舆情风险已达到较高区间，避免只讲权利依据而忽略对方身份和传播素材。";
+        else caution.textContent = "仍应避免把舆情研判结果替代法律判断，所有外部表达以已核实事实为边界。";
+        syncReportRisk();
       }
 
       function updateRiskResult() {
@@ -1345,13 +2430,13 @@
         else if (legal === "pending") parts.push("法律基础：存在待核验事项。");
         parts.push(...advice);
         const result = document.getElementById("riskResult");
-        result.textContent = parts.length ? parts.join(" ") : "完成选择后生成不利动作与传播提示。";
+        result.textContent = parts.length ? parts.join(" ") : "完成选择后生成汇报前提示。";
         result.classList.toggle("has-result", parts.length > 0);
       }
 
       function updateDimensionConclusions(material, object, narrative) {
         const values = { material, object, narrative };
-        const labels = { material: "材料硬度", object: "对象弱度", narrative: "叙事偏离度" };
+        const labels = { material: "证据充分度", object: "公众同情度", narrative: "舆论偏离度" };
         Object.entries(values).forEach(([id, value]) => {
           const target = document.getElementById(`dimension-conclusion-${id}`);
           if (target) target.textContent = value == null ? "待评分" : `${labels[id]} ${value.toFixed(2)}`;
@@ -1365,14 +2450,26 @@
         const sensitivity = object == null || narrative == null ? null : object + narrative;
         const legal = document.getElementById("legalUncertainty").value;
         const completedCount = Object.values(state).filter((value) => value != null).length;
+        const scoreComplete = firstIncompleteIndex() === -1;
         document.getElementById("progressNote").textContent = `已完成 ${completedCount}/12 项｜请选择最接近的 1/3/5 分档位`;
-        document.getElementById("mobileResultMeta").textContent = `已完成 ${completedCount}/12 项`;
+        const currentItem = allItems[mobileQuestionIndex];
+        document.getElementById("mobileResultMeta").textContent = `第 ${mobileQuestionIndex + 1} 题｜已完成 ${completedCount}/12 项`;
         document.getElementById("mobileProgressFill").style.width = `${(completedCount / 12) * 100}%`;
+        document.getElementById("mobilePrevBtn").disabled = mobileQuestionIndex === 0;
+        document.getElementById("mobileNextBtn").disabled = currentItem == null;
+        document.getElementById("mobileNextBtn").textContent = mobileQuestionIndex === allItems.length - 1 ? scoreComplete ? "进入汇报提示" : "完成当前题" : "下一题";
+        document.getElementById("mobileJumpBtn").textContent = scoreComplete ? "看报告" : "看提示";
+        document.getElementById("mobileStepStatus").textContent = currentItem && state[currentItem.id] == null ? "请选择当前题目后继续" : currentItem && mobileQuestionIndex === allItems.length - 1 ? scoreComplete ? "评分完成，先确认汇报提示" : "请选择当前题目后继续" : "已选择，可继续下一题";
+        document.getElementById("generateReportBtn").disabled = false;
+        document.getElementById("generateReportBtn").textContent = scoreComplete ? reportGenerated ? "更新并查看报告" : "生成可视化报告" : "完成剩余评分";
+        document.getElementById("workflowStatus").textContent = !scoreComplete ? `还需完成 ${12 - completedCount} 项评分，完成后才能生成完整报告。` : reportGenerated ? "完整报告已生成，可打印或存为PDF。" : "评分已完成，请确认传播风险提示后生成完整报告。";
+        document.getElementById("reportStatus").textContent = !scoreComplete ? "完成12项评分后生成完整报告。" : reportGenerated ? "评分已完成：以下为完整可视化研判报告。" : "评分已完成：确认汇报提示后，点击“生成可视化报告”。";
         const complete = material != null && sensitivity != null;
-        let zoneId = complete ? getZone(material, sensitivity) : null;
+        const baseZoneId = complete ? getZone(material, sensitivity) : null;
+        let zoneId = baseZoneId;
         if (legal === "major") zoneId = "legal";
         else if (legal === "pending" && zoneId !== "legal") zoneId = "pending";
-        const zone = zoneId ? zones[zoneId] : { title: "待完成基础研判", action: "完成左侧12项评分", color: "#071936", mediaTip: "待形成", suggestion: "完成基础评分后生成结果。" };
+        const zone = zoneId ? zones[zoneId] : { title: "待完成风险评估", action: "完成12项评分", color: "#071936", mediaTip: "待形成", suggestion: "完成风险评估后生成报告。" };
 
         ["materialScore", "objectScore", "narrativeScore", "sensitivityScore"].forEach((id) => { document.getElementById(id).textContent = "—"; });
         if (material != null) document.getElementById("materialScore").textContent = material.toFixed(2);
@@ -1384,16 +2481,30 @@
         setBar("narrativeBar", narrative, 1, 5);
         setBar("sensitivityBar", sensitivity, 2, 10);
         updateDimensionConclusions(material, object, narrative);
-        document.getElementById("resultTitle").textContent = zone.title;
-        document.getElementById("resultAction").textContent = legal === "major" || legal === "pending" ? `${zone.action}｜基础象限仅作参考` : zone.action;
+        document.getElementById("resultTitle").textContent = !complete ? "待完成风险评估" : !reportGenerated ? "待生成可视化报告" : zone.title;
+        document.getElementById("resultAction").textContent = !complete
+          ? "完成12项评分后生成"
+          : !reportGenerated
+            ? "确认传播风险提示后生成"
+            : legal === "major" || legal === "pending" ? `${zone.action}｜基础象限仅作参考` : zone.action;
+        document.getElementById("reportAdviceTitle").textContent = !complete ? "待生成" : reportGenerated ? zone.title : "待生成";
+        document.getElementById("reportAdviceTitle").style.color = reportGenerated && complete ? zone.color : "var(--orange)";
         document.getElementById("mobileResultTitle").textContent = zone.title;
         document.getElementById("mobileProgressFill").style.background = zone.color;
         document.getElementById("suggestion").textContent = zone.suggestion;
-        document.getElementById("resultHead").style.background = zone.color;
-        document.getElementById("rawResult").textContent = material == null || sensitivity == null ? "待评分" : zones[getZone(material, sensitivity)].title;
+        document.getElementById("resultHead").style.background = reportGenerated && complete ? zone.color : "var(--navy)";
+        document.getElementById("rawResult").textContent = baseZoneId == null ? "待评分" : zones[baseZoneId].title;
         document.getElementById("mediaTip").textContent = zone.mediaTip;
         document.getElementById("adjustStatus").textContent = legal === "major" ? "重大不确定性" : legal === "pending" ? "待复核" : legal === "none" ? "未发现重大不确定性" : "待复核";
-        document.querySelectorAll(".quad-card").forEach((card) => card.classList.toggle("active", zoneId && card.dataset.zone === (zoneId === "legal" || zoneId === "pending" ? "danger" : zoneId)));
+        document.getElementById("resultReason").textContent = resultReason(zoneId, material, sensitivity, legal);
+        document.getElementById("resultGap").textContent = resultGap(zoneId, legal);
+        updateBriefing(zoneId, zone, legal, material, sensitivity, document.getElementById("mainNarrative").value, document.getElementById("narrativeState").value);
+        document.querySelectorAll(".quad-card").forEach((card) => card.classList.toggle("active", baseZoneId && card.dataset.zone === baseZoneId));
+        const quadrantNotice = document.getElementById("quadrantNotice");
+        if (!baseZoneId) quadrantNotice.textContent = "完成风险评估后显示基础象限位置。";
+        else if (legal === "major") quadrantNotice.textContent = `基础象限：${zones[baseZoneId].title}｜因存在重大法律不确定性，当前结果不直接采用基础象限作为行动结论。`;
+        else if (legal === "pending") quadrantNotice.textContent = `基础象限：${zones[baseZoneId].title}｜存在待核验事项，完成复核后再确认汇报结论。`;
+        else quadrantNotice.textContent = `当前基础象限：${zones[baseZoneId].title}。`;
         const marker = document.getElementById("marker");
         if (!complete) marker.style.display = "none";
         else {
@@ -1412,6 +2523,9 @@
           const button = event.target.closest(".score-button");
           if (!button) return;
           state[button.dataset.item] = Number(button.dataset.score);
+          reportGenerated = false;
+          const selectedIndex = allItems.findIndex((item) => item.id === button.dataset.item);
+          if (selectedIndex >= 0 && selectedIndex < allItems.length - 1) mobileQuestionIndex = selectedIndex + 1;
           renderScoring();
           update();
         });
@@ -1425,13 +2539,55 @@
         document.getElementById("resetBtn").addEventListener("click", () => {
           Object.keys(state).forEach((key) => { state[key] = null; });
           Object.keys(actionState).forEach((key) => { actionState[key] = false; });
+          mobileQuestionIndex = 0;
+          reportGenerated = false;
           ["legalUncertainty", "mainNarrative", "secondaryNarrative", "narrativeState", "factCorrection"].forEach((id) => { document.getElementById(id).value = ""; });
           renderScoring();
           renderActions();
           update();
         });
         document.getElementById("mobileJumpBtn").addEventListener("click", () => {
-          document.getElementById("summaryPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+          const scoreComplete = firstIncompleteIndex() === -1;
+          document.getElementById(scoreComplete ? "reportSection" : "briefingPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("mobilePrevBtn").addEventListener("click", () => {
+          if (mobileQuestionIndex === 0) return;
+          mobileQuestionIndex -= 1;
+          renderScoring();
+          update();
+          document.getElementById("scoring").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("mobileNextBtn").addEventListener("click", () => {
+          const currentItem = allItems[mobileQuestionIndex];
+          if (!currentItem || state[currentItem.id] == null) {
+            document.getElementById("mobileStepStatus").textContent = "请先选择当前题目的评分";
+            return;
+          }
+          if (mobileQuestionIndex === allItems.length - 1) {
+            if (firstIncompleteIndex() === -1) document.getElementById("briefingPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+            else document.getElementById("mobileStepStatus").textContent = "请先选择当前题目的评分";
+            return;
+          }
+          mobileQuestionIndex += 1;
+          renderScoring();
+          update();
+          document.getElementById("scoring").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("generateReportBtn").addEventListener("click", () => {
+          const incompleteIndex = firstIncompleteIndex();
+          if (incompleteIndex !== -1) {
+            mobileQuestionIndex = incompleteIndex;
+            renderScoring();
+            update();
+            document.getElementById("scoring").scrollIntoView({ behavior: "smooth", block: "start" });
+            return;
+          }
+          reportGenerated = true;
+          update();
+          document.getElementById("reportSection").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("startAssessmentBtn").addEventListener("click", () => {
+          document.getElementById("scoring").scrollIntoView({ behavior: "smooth", block: "start" });
         });
         window.addEventListener("resize", update);
       }
