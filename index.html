@@ -169,6 +169,140 @@
         line-height: 1.55;
       }
 
+      .example-mini-quadrant {
+        margin-top: 18px;
+        padding-top: 14px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .example-mini-title {
+        color: var(--navy);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .example-mini-map {
+        position: relative;
+        height: 124px;
+        margin-top: 8px;
+        padding: 11px 28px;
+      }
+
+      .example-mini-map::before,
+      .example-mini-map::after {
+        position: absolute;
+        z-index: 0;
+        content: "";
+        background: #cbd5e1;
+      }
+
+      .example-mini-map::before {
+        top: 11px;
+        bottom: 11px;
+        left: 50%;
+        width: 1px;
+      }
+
+      .example-mini-map::after {
+        top: 50%;
+        right: 28px;
+        left: 28px;
+        height: 1px;
+      }
+
+      .example-mini-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 6px;
+        height: 102px;
+      }
+
+      .example-mini-cell {
+        display: grid;
+        place-items: center;
+        border: 1px solid;
+        border-radius: 8px;
+        color: #64748b;
+        background: #f8fafc;
+        font-size: 12px;
+        font-weight: 850;
+        text-align: center;
+      }
+
+      .example-mini-cell.active {
+        color: var(--red);
+        border-color: var(--red);
+        background: var(--red-bg);
+        box-shadow: inset 0 0 0 2px rgba(185, 28, 28, 0.12);
+      }
+
+      .example-mini-axis {
+        position: absolute;
+        z-index: 2;
+        color: #98a2b3;
+        font-size: 10px;
+        font-weight: 800;
+      }
+
+      .example-mini-axis.top {
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .example-mini-axis.bottom {
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .example-mini-axis.left {
+        bottom: 4px;
+        left: 0;
+      }
+
+      .example-mini-axis.right {
+        right: 0;
+        bottom: 4px;
+      }
+
+      .example-conclusion {
+        border-color: rgba(234, 88, 12, 0.36);
+        background: #fffaf5;
+      }
+
+      .example-guides {
+        display: grid;
+        gap: 9px;
+        margin: 16px 0 0;
+        padding-left: 22px;
+        color: #344054;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .example-guides li::marker {
+        color: var(--orange);
+        font-weight: 900;
+      }
+
+      .example-guides strong,
+      .example-guides span {
+        display: block;
+      }
+
+      .example-guides strong {
+        color: var(--navy);
+      }
+
+      .example-guides span {
+        margin-top: 2px;
+        color: var(--muted);
+      }
+
       .example-bars {
         display: grid;
         gap: 12px;
@@ -397,7 +531,7 @@
 
       .use-case-flow {
         display: grid;
-        grid-template-columns: 1fr auto 1fr auto 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px;
         align-items: center;
       }
@@ -450,9 +584,7 @@
       }
 
       .use-case-arrow {
-        color: #98a2b3;
-        font-size: 22px;
-        font-weight: 900;
+        display: none;
       }
 
       .block-heading {
@@ -478,9 +610,105 @@
 
       .top-grid {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr) 286px;
         gap: 24px;
         align-items: start;
+      }
+
+      .workflow-rail {
+        position: sticky;
+        top: 18px;
+        display: grid;
+        gap: 16px;
+        padding: 18px;
+        border: 1px solid #cbd5e1;
+        border-radius: 16px;
+        background: #f8fafc;
+      }
+
+      .workflow-rail-title {
+        color: var(--navy);
+        font-size: 18px;
+        font-weight: 950;
+      }
+
+      .workflow-progress {
+        height: 8px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e5e7eb;
+      }
+
+      .workflow-progress span {
+        display: block;
+        width: 0;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--orange);
+        transition: width 0.2s ease;
+      }
+
+      .workflow-progress-text {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .workflow-steps {
+        display: grid;
+        gap: 10px;
+      }
+
+      .workflow-step {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 10px;
+        align-items: start;
+        padding: 10px 0;
+        color: #667085;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .workflow-step:last-child {
+        border-bottom: 0;
+      }
+
+      .workflow-step-number {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        border: 1px solid #cbd5e1;
+        border-radius: 50%;
+        color: #667085;
+        background: #fff;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .workflow-step strong {
+        display: block;
+        color: var(--navy);
+        font-size: 14px;
+      }
+
+      .workflow-step small {
+        display: block;
+        margin-top: 3px;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .workflow-step.active .workflow-step-number,
+      .workflow-step.done .workflow-step-number {
+        color: #fff;
+        border-color: var(--orange);
+        background: var(--orange);
+      }
+
+      .workflow-step.active small,
+      .workflow-step.done small {
+        color: #344054;
       }
 
       .scoring {
@@ -586,9 +814,41 @@
         margin-bottom: 10px;
       }
 
+      .item-heading {
+        display: flex;
+        min-height: 34px;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .item-number {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 8px;
+        color: #fff;
+        background: var(--blue);
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: 0.02em;
+        line-height: 1;
+      }
+
+      .card.object .item-number {
+        background: var(--brown);
+      }
+
+      .card.narrative .item-number {
+        background: var(--orange);
+      }
+
       .item-name {
-        font-size: 18px;
+        color: var(--navy);
+        font-size: 17px;
         font-weight: 850;
+        line-height: 1.35;
       }
 
       .score-tip {
@@ -601,6 +861,11 @@
         line-height: 1.5;
       }
 
+      .score-tip,
+      .score-standards {
+        display: none;
+      }
+
       .score-buttons {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -608,15 +873,18 @@
       }
 
       .score-button {
-        min-height: 44px;
+        min-height: 78px;
         border: 1px solid #cbd5e1;
         border-radius: 10px;
+        padding: 12px;
         color: var(--navy);
         background: #fff;
         cursor: pointer;
         font: inherit;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 850;
+        line-height: 1.45;
+        text-align: left;
         touch-action: manipulation;
       }
 
@@ -1544,6 +1812,22 @@
           grid-template-columns: 1fr;
         }
 
+        .workflow-rail {
+          position: static;
+          grid-template-columns: 1fr 1.5fr;
+          align-items: center;
+        }
+
+        .workflow-steps {
+          grid-column: 1 / -1;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px;
+        }
+
+        .workflow-step {
+          border-bottom: 0;
+        }
+
         .summary {
           position: static;
         }
@@ -1785,6 +2069,22 @@
           padding-bottom: 10px;
         }
 
+        .workflow-rail {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          padding: 14px;
+        }
+
+        .workflow-steps {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .workflow-step {
+          padding: 8px 0;
+          border-bottom: 1px solid #e2e8f0;
+        }
+
         .card-head {
           min-height: 96px;
           padding: 16px;
@@ -1829,13 +2129,16 @@
         }
 
         .score-buttons {
+          grid-template-columns: 1fr;
           gap: 7px;
         }
 
         .score-button {
-          min-height: 46px;
+          min-height: 54px;
           border-radius: 12px;
-          font-size: 15px;
+          padding: 11px 12px;
+          font-size: 14px;
+          text-align: left;
         }
 
         .score-standards {
@@ -2107,12 +2410,10 @@
               <span class="use-case-number">1</span>
               <span><strong>维权前内部研判</strong><span>判断证据、公众同情和舆论偏离风险</span></span>
             </div>
-            <div class="use-case-arrow" aria-hidden="true">→</div>
             <div class="use-case-step">
               <span class="use-case-number">2</span>
               <span><strong>客户汇报前整理</strong><span>把评分转化为客户听得懂的风险提示</span></span>
             </div>
-            <div class="use-case-arrow" aria-hidden="true">→</div>
             <div class="use-case-step">
               <span class="use-case-number">3</span>
               <span><strong>形成可视化报告</strong><span>明确可说明、重点提示和暂不下结论事项</span></span>
@@ -2126,36 +2427,40 @@
           <div>
             <div class="example-kicker">先看结果，再开始评估</div>
             <h2 class="example-title" id="exampleReportTitle">示例案情报告｜某国际奢侈品牌维权</h2>
-            <p class="example-desc">以某国际奢侈品牌针对宣传用语及视觉素材的维权争议为例，预览最终报告如何呈现加权汇总、模型定位、推进建议和风险提示。</p>
+            <p class="example-desc">先看一个常见的维权难题：法律依据并不等于公众会按法律逻辑理解案件。</p>
           </div>
           <button class="example-start" id="startAssessmentBtn" type="button">开始我的案件评估</button>
         </div>
         <div class="example-grid">
           <div class="example-result">
-            <div class="example-result-label">示例案件：某国际奢侈品牌宣传用语及视觉素材维权</div>
-            <div class="example-result-title">谨慎推进</div>
-            <div class="example-result-copy">证据基础较强，但对方具有创业者身份，且视觉对比素材容易形成强弱叙事。建议控制表达节奏，并在汇报中提示传播扩散和法律复核边界。</div>
-          </div>
-          <div class="example-bars" aria-label="示例加权汇总">
-            <div class="example-bar-row"><span>证据充分度</span><div class="example-bar blue"><span></span></div><strong>4.10</strong></div>
-            <div class="example-bar-row"><span>公众同情度</span><div class="example-bar brown"><span></span></div><strong>3.70</strong></div>
-            <div class="example-bar-row"><span>舆论偏离度</span><div class="example-bar orange"><span></span></div><strong>3.40</strong></div>
-            <div class="example-bar-row"><span>综合舆情风险</span><div class="example-bar orange"><span style="width:71%"></span></div><strong>7.10</strong></div>
-          </div>
-          <div class="example-quadrant">
-            <div class="example-quadrant-title">示例模型定位</div>
-            <div class="example-map-shell" aria-label="示例四象限模型">
-              <span class="example-axis-top">综合舆情风险高</span>
-              <span class="example-axis-bottom">综合舆情风险低</span>
-              <span class="example-axis-left">证据充分度低</span>
-              <span class="example-axis-right">证据充分度高</span>
-              <div class="example-map-grid">
-                <div class="example-quad-card example-quad-red">暂缓行动<small>补事实｜完成复核</small></div>
-                <div class="example-quad-card example-quad-orange">谨慎推进<small>控制措辞｜锁定主叙事<span class="example-marker">示例</span></small></div>
-                <div class="example-quad-card example-quad-slate">补证观察<small>继续取证｜监测扩散</small></div>
-                <div class="example-quad-card example-quad-green">正常推进<small>适度说明｜只说事实</small></div>
+            <div class="example-result-label">示例案情：某国际奢侈品牌发现小商户使用近似宣传语和视觉素材</div>
+            <div class="example-result-title">问题不只在“像不像”</div>
+            <div class="example-result-copy">品牌方可能拥有较稳定的权利基础，也能拿出直观的对比材料；但对方是本地创业者，案件一旦公开，公众很容易先看到“大品牌与小商户”的身份差异。此时，律师面对的就不只是侵权判断，还要回答：材料能否经得起公众追问，事实能否完整讲清，舆论会不会先替案件下结论？</div>
+            <div class="example-mini-quadrant" aria-label="示例象限定位">
+              <div class="example-mini-title">示例象限定位</div>
+              <div class="example-mini-map">
+                <span class="example-mini-axis top">综合舆情风险高</span>
+                <span class="example-mini-axis bottom">综合舆情风险低</span>
+                <span class="example-mini-axis left">证据充分度低</span>
+                <span class="example-mini-axis right">证据充分度高</span>
+                <div class="example-mini-grid">
+                  <div class="example-mini-cell active">暂缓行动</div>
+                  <div class="example-mini-cell">谨慎推进</div>
+                  <div class="example-mini-cell">补证观察</div>
+                  <div class="example-mini-cell">正常推进</div>
+                </div>
               </div>
             </div>
+          </div>
+          <div class="example-result example-conclusion">
+            <div class="example-result-label">通过什么条件，得到什么结论</div>
+            <div class="example-result-title">暂缓行动</div>
+            <div class="example-result-copy">当对比材料看似清楚，但对方身份容易获得同情，且传播素材足以形成强弱叙事时，先不要把法律判断直接转化为公开行动。</div>
+            <ol class="example-guides">
+              <li><strong>观察舆情走势</strong><span>确认议题是否正在扩散，避免被动追着舆情解释。</span></li>
+              <li><strong>补充事实材料</strong><span>补齐权利、主体、时间和交易链条，确保故事能完整说明。</span></li>
+              <li><strong>再判断是否推进</strong><span>等事实和舆情条件更稳定后，再形成客户汇报结论。</span></li>
+            </ol>
           </div>
         </div>
       </section>
@@ -2179,17 +2484,26 @@
 
       <div class="block-heading">
         <h2>一、风险评估</h2>
-        <span id="progressNote">已完成 0/12 项｜请选择最接近的 1/3/5 分档位</span>
+        <span id="progressNote">12道判断题｜请选择最符合案情的选项</span>
       </div>
 
       <section class="top-grid">
         <div class="scoring" id="scoring"></div>
-
+        <aside class="workflow-rail" aria-label="评估流程">
+          <div class="workflow-rail-title">评估进程</div>
+          <div class="workflow-progress"><span id="workflowProgressFill"></span></div>
+          <div class="workflow-progress-text" id="workflowProgressText">第1步｜风险评估</div>
+          <div class="workflow-steps">
+            <div class="workflow-step active" data-workflow-step="1"><span class="workflow-step-number">1</span><div><strong>风险评估</strong><small>完成12道判断题</small></div></div>
+            <div class="workflow-step" data-workflow-step="2"><span class="workflow-step-number">2</span><div><strong>传播风险提示</strong><small>补充已知传播情形</small></div></div>
+            <div class="workflow-step" data-workflow-step="3"><span class="workflow-step-number">3</span><div><strong>生成研判报告</strong><small>形成一个聚焦结论</small></div></div>
+          </div>
+        </aside>
       </section>
 
       <section class="action-panel" id="briefingPanel">
         <h2 class="subsection-title">二、传播风险提示</h2>
-        <p class="subsection-desc">选择已经出现或可能出现的传播情形，系统将整理为最终研判报告中的风险提示。</p>
+        <p class="subsection-desc">补充案件已知的传播情形，帮助报告聚焦一个结论。</p>
         <div class="action-grid" id="actionChecks"></div>
         <div class="select-grid">
           <div class="select-field">
@@ -2260,11 +2574,11 @@
           <div class="result-head" id="resultHead">
             <div class="result-label">客户汇报可视化结果</div>
             <div class="result-title" id="resultTitle" aria-live="polite">待完成风险评估</div>
-            <div class="result-action" id="resultAction">完成12项评分后生成</div>
+            <div class="result-action" id="resultAction">完成评估后生成</div>
           </div>
           <div class="report-four-grid">
             <section class="report-box report-model-box">
-              <div class="report-box-title">模型定位</div>
+              <div class="report-box-title">模型定位｜象限结果</div>
               <div class="report-map-shell">
                 <span class="report-axis-top">综合舆情风险高</span>
                 <span class="report-axis-bottom">综合舆情风险低</span>
@@ -2380,9 +2694,9 @@
           const items = dimension.items.map((item) => {
             const currentIndex = itemIndex;
             itemIndex += 1;
-            const buttons = [1, 3, 5].map((score) => `<button class="score-button ${state[item.id] === score ? "active" : ""}" type="button" data-item="${item.id}" data-score="${score}" aria-pressed="${state[item.id] === score}">${score}分</button>`).join("");
-            const standards = [1, 3, 5].map((score) => `<div class="score-standard ${state[item.id] === score ? "selected" : ""}">${score}分：${item.standards[score]}</div>`).join("");
-            return `<div class="item ${currentIndex === mobileQuestionIndex ? "mobile-active" : ""}" data-question-index="${currentIndex}"><div class="item-main"><div class="item-name">${item.name}</div><div class="score-tip">评分提示：${item.tip}</div></div><div class="score-buttons">${buttons}</div><div class="score-standards">${standards}</div></div>`;
+            const buttons = [1, 3, 5].map((score) => `<button class="score-button ${state[item.id] === score ? "active" : ""}" type="button" data-item="${item.id}" data-score="${score}" aria-label="${item.name}：${item.standards[score]}" aria-pressed="${state[item.id] === score}">${item.standards[score]}</button>`).join("");
+            const questionNumber = String(currentIndex + 1).padStart(2, "0");
+            return `<div class="item ${currentIndex === mobileQuestionIndex ? "mobile-active" : ""}" data-question-index="${currentIndex}"><div class="item-main"><div class="item-heading"><span class="item-number">${questionNumber}</span><div class="item-name" aria-label="${item.name}：${item.tip}">${item.name}</div></div><div class="score-tip">${item.tip}</div></div><div class="score-buttons">${buttons}</div></div>`;
           }).join("");
           return `<article class="card ${dimension.className}"><div class="card-head"><div class="icon">${dimension.icon}</div><div><div class="card-title">${dimension.title}</div><div class="card-desc">${dimension.desc}</div></div></div><div class="items">${items}</div><div class="dimension-foot"><span>维度结论</span><strong id="dimension-conclusion-${dimension.id}" aria-live="polite">待评分</strong></div></article>`;
         }).join("");
@@ -2406,11 +2720,30 @@
         const feedback = document.getElementById("scoreFeedback");
         const text = document.getElementById("scoreFeedbackText");
         text.textContent = nextItem
-          ? `已记录：${item.name} ${score}分｜下一题：${nextItem.name}`
-          : `已记录：${item.name} ${score}分｜评分已完成，请查看传播风险提示`;
+          ? `已选择：${item.name}｜下一题：${nextItem.name}`
+          : `已选择：${item.name}｜评分已完成`;
         feedback.classList.add("show");
         window.clearTimeout(feedbackTimer);
         feedbackTimer = window.setTimeout(() => feedback.classList.remove("show"), 2400);
+      }
+
+      function updateWorkflow(completedCount, scoreComplete, briefingReady, reportGenerated) {
+        const currentStep = reportGenerated ? 3 : briefingReady ? 2 : 1;
+        document.getElementById("workflowProgressFill").style.width = `${reportGenerated ? 100 : briefingReady ? 76 : (completedCount / 12) * 62}%`;
+        document.getElementById("workflowProgressText").textContent = reportGenerated
+          ? "第3步｜研判报告已生成"
+          : briefingReady
+            ? "第2步｜补充传播风险提示"
+            : `第1步｜已完成 ${completedCount}/12 道判断`;
+        document.querySelectorAll("[data-workflow-step]").forEach((step) => {
+          const number = Number(step.dataset.workflowStep);
+          step.classList.toggle("active", number === currentStep);
+          step.classList.toggle("done", number < currentStep);
+        });
+      }
+
+      function missingQuestions() {
+        return allItems.filter((item) => state[item.id] == null).map((item) => item.name);
       }
 
       function getZone(material, sensitivity) {
@@ -2517,7 +2850,7 @@
         const legal = document.getElementById("legalUncertainty").value;
         const completedCount = Object.values(state).filter((value) => value != null).length;
         const scoreComplete = firstIncompleteIndex() === -1;
-        document.getElementById("progressNote").textContent = `已完成 ${completedCount}/12 项｜请选择最接近的 1/3/5 分档位`;
+        document.getElementById("progressNote").textContent = "12道判断题｜请选择最符合案情的选项";
         const currentItem = allItems[mobileQuestionIndex];
         document.getElementById("mobileResultMeta").textContent = `第 ${mobileQuestionIndex + 1} 题｜已完成 ${completedCount}/12 项`;
         document.getElementById("mobileProgressFill").style.width = `${(completedCount / 12) * 100}%`;
@@ -2527,9 +2860,10 @@
         document.getElementById("mobileJumpBtn").textContent = scoreComplete ? "看报告" : "看提示";
         document.getElementById("mobileStepStatus").textContent = currentItem && state[currentItem.id] == null ? "请选择当前题目后继续" : currentItem && mobileQuestionIndex === allItems.length - 1 ? scoreComplete ? "评分完成，先确认汇报提示" : "请选择当前题目后继续" : "已选择，可继续下一题";
         document.getElementById("generateReportBtn").disabled = false;
-        document.getElementById("generateReportBtn").textContent = scoreComplete ? reportGenerated ? "更新并查看报告" : "生成可视化报告" : "完成剩余评分";
-        document.getElementById("workflowStatus").textContent = !scoreComplete ? `还需完成 ${12 - completedCount} 项评分，完成后才能生成完整报告。` : reportGenerated ? "完整报告已生成，可打印或存为PDF。" : "评分已完成，请确认传播风险提示后生成完整报告。";
-        document.getElementById("reportStatus").textContent = !scoreComplete ? "完成12项评分后生成完整报告。" : reportGenerated ? "评分已完成：以下为完整可视化研判报告。" : "评分已完成：确认汇报提示后，点击“生成可视化报告”。";
+        document.getElementById("generateReportBtn").textContent = reportGenerated ? "更新并查看报告" : "生成研判报告";
+        document.getElementById("workflowStatus").textContent = reportGenerated ? "研判报告已生成，可继续调整后重新生成。" : "完成评估后生成一份聚焦的客户汇报结论。";
+        document.getElementById("reportStatus").textContent = !scoreComplete ? "完成12道判断后生成完整报告。" : reportGenerated ? "以下为可直接用于客户汇报的研判结果。" : "完成评估后生成完整报告。";
+        updateWorkflow(completedCount, scoreComplete, scoreComplete, reportGenerated);
         const complete = material != null && sensitivity != null;
         const baseZoneId = complete ? getZone(material, sensitivity) : null;
         let zoneId = baseZoneId;
@@ -2549,7 +2883,7 @@
         updateDimensionConclusions(material, object, narrative);
         document.getElementById("resultTitle").textContent = !complete ? "待完成风险评估" : !reportGenerated ? "待生成可视化报告" : zone.title;
         document.getElementById("resultAction").textContent = !complete
-          ? "完成12项评分后生成"
+          ? "完成评估后生成"
           : !reportGenerated
             ? "确认传播风险提示后生成"
             : legal === "major" || legal === "pending" ? `${zone.action}｜基础象限仅作参考` : zone.action;
@@ -2644,6 +2978,12 @@
         document.getElementById("generateReportBtn").addEventListener("click", () => {
           const incompleteIndex = firstIncompleteIndex();
           if (incompleteIndex !== -1) {
+            const missing = missingQuestions();
+            const feedback = document.getElementById("scoreFeedback");
+            document.getElementById("scoreFeedbackText").textContent = `还差 ${missing.length} 道：${missing.join("、")}`;
+            feedback.classList.add("show");
+            window.clearTimeout(feedbackTimer);
+            feedbackTimer = window.setTimeout(() => feedback.classList.remove("show"), 4200);
             mobileQuestionIndex = incompleteIndex;
             renderScoring();
             update();
